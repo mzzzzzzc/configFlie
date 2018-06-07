@@ -1,0 +1,50 @@
+db:
+  properties:
+    oracle_class: oracle.jdbc.driver.OracleDriver
+    mysql_class: com.mysql.jdbc.Driver
+    sck_port: 1521
+    sck_ip_11: 10.1.50.205
+    sck_ip_13: 10.1.50.13
+    sck_ip_lb: 10.1.50.15
+    sck_instance_11: orcl
+    sck_instance_13: orcl13
+    sck_instance_lb: orcllb
+    sck_url_11: jdbc:oracle:thin:@${db.properties.sck_ip_11}:${db.properties.sck_port}:${db.properties.sck_instance_11}
+    sck_url_13: jdbc:oracle:thin:@${db.properties.sck_ip_13}:${db.properties.sck_port}:${db.properties.sck_instance_13}
+    sck_url_lb: jdbc:oracle:thin:@${db.properties.sck_ip_lb}:${db.properties.sck_port}:${db.properties.sck_instance_lb}
+    glk_port: 1521
+    glk_ip_21: 10.2.50.21
+    glk_ip_23: 10.2.50.23
+    glk_ip_lb: 10.2.50.25
+    glk_instance_21: orcl21
+    glk_instance_23: orcl23
+    glk_instance_lb: orcllb
+    glk_url_21: jdbc:oracle:thin:@${db.properties.glk_ip_21}:${db.properties.glk_port}:${db.properties.glk_instance_21}
+    glk_url_23: jdbc:oracle:thin:@${db.properties.glk_ip_23}:${db.properties.glk_port}:${db.properties.glk_instance_23}
+    glk_url_lb: jdbc:oracle:thin:@${db.properties.glk_ip_lb}:${db.properties.glk_port}:${db.properties.glk_instance_lb}
+    sddbshare_ip: 10.3.50.100
+    sddbshare_port: 1521
+    sddbshare_instance: orclsddbshare
+    sddbshare_url: jdbc:oracle:thin:@${db.properties.sddbshare_ip}:${db.properties.sddbshare_port}:${db.properties.sddbshare_instance}
+    sg186_ip: 10.4.50.100
+    sg186_port: 1521
+    sg186_instance: orclsg186
+    sg186_url: jdbc:oracle:thin:@${db.properties.sg186_ip}:${db.properties.sg186_port}:${db.properties.sg186_instance}
+    connectionTimeout: 30000
+    connectionTestQuery: select dummy from dual
+    idleTimeout: 600000
+    maxLifetime: 1800000
+  sck11:
+    poolName: sck11
+    jdbcUrl: ${db.properties.sck_url_11}
+    connectionTimeout: ${db.properties.connectionTimeout}
+    connectionTestQuery: ${db.properties.connectionTestQuery}
+    idleTimeout: ${db.properties.idleTimeout}
+    maxLifetime: ${db.properties.maxLifetime}
+    maximumPoolSize: 50
+    minimumIdle: 5
+    username: sddb
+    password: sddb
+    isdecode: false
+    mode: 99
+
