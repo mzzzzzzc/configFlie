@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<config name="INIT_SEW_ENGINE" value="false" />
+	<config name="USERNAME_PWD_ENCRYPTED" value="false" />
+	<config name="CACHE_STANDALONE" value="false"></config>
+	<config name="HAZELCAST_ADDRESS_SQL" value="SELECT sp.config_value HAZELCAST_ADDRESS FROM bpzone.syspara sp WHERE sp.config_name = 'HAZELCAST_ADDRESS'"></config>
+	<config name="SUPPORT_RWTS" value="true" />
+	<config name="SUPPORT_UNCLAIM" value="true" />
+	<config name="CONFIRM_WHEN_ABORT" value="true" />
+	<config name="ACTIVITI_EXPLORER_URL" value="10.1.50.26:18080"></config>
+	<!-- 是否记录业务办理场景 -->
+	<config name="USE_BIZ_SCENE" value="false" />
+	<!-- 长兴发送消息 -->
+	<config name="CX_SEND_NEWS" value="false" />
+	
+	<config name="CX_SEND_NEWS_APPLY_FROM" value="0" /><!-- 数据来源：（窗口申报：0， 网上申报：1） -->
+	
+</config>
